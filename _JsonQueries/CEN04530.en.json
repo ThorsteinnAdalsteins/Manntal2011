@@ -1,0 +1,28 @@
+{
+  "query": [
+    {
+      "code": "Type of building",
+      "selection": {
+        "filter": "item",
+        "values": ["TOTAL", "RES1", "RES2", "RES_GE3", "NRES", "UNK"]
+      }
+    },
+    {
+      "code": "Occupancy status of conventional dwellings",
+      "selection": {
+        "filter": "item",
+        "values": ["DW", "DW_OC", "DW_NOC"]
+      }
+    },
+    {
+      "code": "Period of construction",
+      "selection": {
+        "filter": "item",
+        "values": ["TOTAL", "Y_LT1919", "Y1919-1945", "Y1946-1960", "Y1961-1970", "Y1971-1980", "Y1981-1990", "Y1991-2000", "Y2001-2005", "Y_GE2006", "UNK"]
+      }
+    }
+  ],
+  "response": {
+    "format": "json"
+  }
+} 

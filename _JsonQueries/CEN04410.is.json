@@ -1,0 +1,35 @@
+{
+  "query": [
+    {
+      "code": "Byggingargerð",
+      "selection": {
+        "filter": "item",
+        "values": ["TOTAL", "RES1", "RES2", "RES_GE3", "NRES", "UNK"]
+      }
+    },
+    {
+      "code": "Íbúatala",
+      "selection": {
+        "filter": "item",
+        "values": ["TOTAL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "GE11"]
+      }
+    },
+    {
+      "code": "Eignarhaldsform",
+      "selection": {
+        "filter": "item",
+        "values": ["DW_OC", "DW_OWN", "DW_COOP", "DW_RENT", "DW_OTH", "UNK", "DW_NOC"]
+      }
+    },
+    {
+      "code": "Þéttseta",
+      "selection": {
+        "filter": "item",
+        "values": ["TOTAL", "SQM_LT10", "SQM10-14", "SQM15-19", "SQM20-29", "SQM30-39", "SQM40-59", "SQM60-79", "SQM_GE80", "UNK"]
+      }
+    }
+  ],
+  "response": {
+    "format": "json"
+  }
+} 
