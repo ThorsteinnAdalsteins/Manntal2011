@@ -81,9 +81,9 @@ dalkar.lyklar <- do.call(rbind, lyklar)
 
 ## töflurnar sem við höfum áhuga á eru
 
-data.cd %>% as_tibble()
-dalkar.meta %>% as_tibble()
-dalkar.lyklar %>% as_tibble()
+data.cd <- data.cd %>% as_tibble() %>% filter(data.cd %>% complete.cases())
+dalkar.meta <- dalkar.meta %>% as_tibble()
+dalkar.lyklar <- dalkar.lyklar %>% as_tibble()
 
 
 ## set upp rétt heiti á skrám
