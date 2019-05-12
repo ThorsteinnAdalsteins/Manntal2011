@@ -3,7 +3,7 @@
 
 rm(list = ls())
 ## nota pxweb_interactive til þess að búa til fyrirspurn.
-## geymi json hlutann í _GognInn
+## geymi json hlutann í _JsonQuery
 source('./R_Sources/__init__.R')
 # pxweb::pxweb_interactive()
 
@@ -92,6 +92,6 @@ csv.meta <- tafla_id %>% str_c('dalkar', sep ='_') %>% str_c('csv', sep = '.')
 csv.lyklar <- tafla_id %>% str_c('dalka_lyklar', sep ='_') %>% str_c('csv', sep = '.')
 
 
-write.table(x = data.cd, file = paste0('./_GognUt/', csv.data), col.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')
-write.table(x = dalkar.meta, file = paste0('./_GognUt/', csv.meta), col.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')
-write.table(x = dalkar.lyklar, file = paste0('./_GognUt/', csv.lyklar), col.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')
+write.table(x = data.cd, file = paste0('./_GognUt/', csv.data), row.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')
+write.table(x = dalkar.meta, file = paste0('./_GognUt/', csv.meta), row.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')
+write.table(x = dalkar.lyklar, file = paste0('./_GognUt/', csv.lyklar), row.names = FALSE, na = 'NULL', fileEncoding = 'UTF-8')

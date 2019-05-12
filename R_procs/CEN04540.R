@@ -3,20 +3,22 @@
 
 rm(list = ls())
 ## nota pxweb_interactive til þess að búa til fyrirspurn.
-## geymi json hlutann í _GognInn
+## geymi json hlutann í _JsonQuery
 source('./R_Sources/__init__.R')
 # pxweb::pxweb_interactive()
 
-## Húsnæði tafla 1
-tafla_id <- 'CEN04410'
+## Húsnæði tafla 3
+tafla_id <- 'CEN04540'
 
 ## undirbúningur fyrir íslensku útgáfuna:
-url.is <- "http://px.hagstofa.is/pxis/api/v1/is/Ibuar/manntal/4manntalhusn/CEN04410.px"
-json.is <- './_JsonQueries/CEN04410.is.json'
+url.is <- "http://px.hagstofa.is/pxis/api/v1/is/Ibuar/manntal/4manntalhusn/CEN04540.px"
+json.is <- './_JsonQueries/CEN04540.is.json'
+if(!file.exists(json.is)){stop('Fann ekki json skránna')}
 
 ## undirbúningur fyrir ensku útgáfuna:
-url.en <- "http://px.hagstofa.is/pxen/api/v1/en/Ibuar/manntal/4manntalhusn/CEN04410.px"
-json.en <- './_JsonQueries/CEN04410.en.json'
+url.en <- "http://px.hagstofa.is/pxen/api/v1/en/Ibuar/manntal/4manntalhusn/CEN04540.px"
+json.en <- './_JsonQueries/CEN04540.en.json'
+if(!file.exists(json.en)){stop('Fann ekki json skránna')}
 
 # sæki gögnin
 px_data.is <- pxweb_get(url = url.is, query = json.is)
@@ -49,7 +51,7 @@ data.en <- data.is.text <- as.data.frame(
 names(data.cd)
 
 dalkar.meta <- tibble(
-  dalkanofn_cd = c('byggingagerd', 'ibuatala', 'eignarhaldsform', 'thettseta',  paste(tafla_id, 'gildi', sep ='_')),
+  dalkanofn_cd = c('landsvaedi', 'ibuatala', 'byggingagerd', 'thettseta', paste(tafla_id, 'gildi', sep ='_')),
   dalkanofn_is = names(data.is),
   dalkanofn_en = names(data.en)
 )
